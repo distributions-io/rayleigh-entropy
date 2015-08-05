@@ -6,12 +6,12 @@ Entropy
 
 The [entropy](https://en.wikipedia.org/wiki/entropy) for a [Rayleigh](https://en.wikipedia.org/wiki/Rayleigh_distribution) random variable is
 
-<div class="equation" align="center" data-raw-text="\operatorname{}\left[ X \right] = " data-equation="eq:entropy">
-	<img src="" alt="entropy for a Rayleigh distribution.">
+<div class="equation" align="center" data-raw-text="H(X) = \mathbb{E}\left[ I(X)\right] = 1+\ln\left(\frac{\sigma}{\sqrt{2}}\right)+\frac{\gamma}{2}" data-equation="eq:entropy">
+	<img src="https://cdn.rawgit.com/distributions-io/rayleigh-entropy/11efb568d8f9c086b9f521c8eea41c65baaa2787/docs/img/eqn.svg" alt="Entropy for Rayleigh distribution.">
 	<br>
 </div>
 
-where `sigma > 0` is the scale parameter.
+where `gamma` is the [Euler–Mascheroni constant](https://en.wikipedia.org/wiki/Euler_Mascheroni_constant) and `sigma > 0` is the scale parameter of the distribution.
 
 
 ## Installation
@@ -252,7 +252,7 @@ var sigma,
 // Plain arrays...
 sigma = new Array( 10 );
 for ( i = 0; i < sigma.length; i++ ) {
-	sigma[ i ] = i;
+	sigma[ i ] = i + 1;
 }
 out = entropy( sigma );
 
@@ -283,7 +283,7 @@ out = entropy( sigma, {
 // Typed arrays...
 sigma = new Float64Array( 10 );
 for ( i = 0; i < sigma.length; i++ ) {
-	sigma[ i ] = i;
+	sigma[ i ] = i + 1;
 }
 out = entropy( sigma );
 
