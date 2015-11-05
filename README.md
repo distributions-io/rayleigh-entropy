@@ -103,7 +103,10 @@ var sigma = [
 	{'x':[9,4]}
 ];
 
-var out = entropy( sigma, 'x|1', '|' );
+var out = entropy( sigma, {
+	'path': 'x|1',
+	'sep': '|'
+});
 /*
 	[
 		{'x':[9,~0.249]},
